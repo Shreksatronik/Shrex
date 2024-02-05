@@ -35,7 +35,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/router/index.js", "src/shims-vue.d.js"  ],
   "exclude": [
     "node_modules"
   ]
