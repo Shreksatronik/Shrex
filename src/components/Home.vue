@@ -11,6 +11,7 @@
     <p class="lead">
     <button @click="OnRegisterPage">Зарегистрироваться</button>
     </p>
+    <button @click="OnLoginPage">Войти</button>
   </main>
 </div>
 </template>
@@ -22,6 +23,11 @@ const OnRegisterPage = ()=>{
   
     router.push("/register");
   };
+
+  const OnLoginPage = ()=>{
+  
+  router.push("/sign-in");
+};
 </script>
 
 
