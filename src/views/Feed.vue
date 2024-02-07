@@ -30,8 +30,6 @@
 nav .nav-link {
   color:black;
 }
-nav .navbar {
-   align-items: center;
-}
+
  
 </style>
