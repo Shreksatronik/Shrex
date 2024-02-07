@@ -6,8 +6,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {onMounted,ref} from "vue";
+import {getAuth, createUserWithEmailAndPassword,onAuthStateChanged, signOut} from "firebase/auth";
 import {useRouter} from 'vue-router';
 const email = ref("");
 const password = ref("");
@@ -23,4 +23,26 @@ const register = () => {
         alert(error.message);
     });
 };
+
+
+
+const isLoggedIn = ref(false);
+
+let auth;
+onMounted(() => {
+  auth = getAuth();
+  onAuthStateChanged(auth,(user)=> {
+      if (user){
+        isLoggedIn.value = true;
+      }else{
+        isLoggedIn.value = false;
+      }
+  });
+});
+const handleSignOut = ()=>{
+  signOut(auth).then(()=>{
+    router.push("/");
+  });
+};
+
 </script>
