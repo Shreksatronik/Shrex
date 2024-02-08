@@ -4,6 +4,7 @@
     <p><input type ="password" placeholder = "Password" v-model="password"/></p>
     <p v-if = "errMsg">{{ errMsg }}</p>
     <p><button @click="register">Submit</button></p>
+    <button @click="handleSignOut" v-if = "isLoggedIn">Sign Out</button>
 </template>
 
 <script setup>
