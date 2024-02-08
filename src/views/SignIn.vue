@@ -10,6 +10,7 @@
 import {ref} from "vue";
 import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import {useRouter} from 'vue-router';
+
 const email = ref("");
 const password = ref("");
 const errMsg = ref('');
@@ -21,6 +22,7 @@ const register = () => {
         console.log("Successfully signed in!");
         console.log(auth.currentUser);
         router.push('/feed');
+
     })
     .catch((error)=>{
         console.log(error.code);
