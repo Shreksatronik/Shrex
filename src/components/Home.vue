@@ -1,10 +1,5 @@
 <template>
   <div class="home">
-  <nav class="nav">
-  <a class="nav-link px-3" href="#">О нас</a>
-  <a class="nav-link px-1" href="#">Контакты</a>
-  <a class="nav-link" href="#">Услуги</a>
-</nav>
   <main class="px-3">
     <div>
     <h1 class = "Title">SHmoodle</h1>
