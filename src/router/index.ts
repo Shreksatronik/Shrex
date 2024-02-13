@@ -6,6 +6,30 @@ const router = createRouter({
     { path: "/", component: ()=> import ("../components/Home.vue")},
     { path: "/register", component: ()=> import ("../views/Register.vue")},
     { path: "/sign-in", component: ()=> import ("../views/SignIn.vue")},
+    {path: "/add-courses", 
+    component: ()=> import ("../views/AddCourses.vue"),
+    meta:{
+     requiresAuth: true,
+    },
+    },
+    {path: "/my-courses", 
+    component: ()=> import ("../views/MyCourses.vue"),
+    meta:{
+     requiresAuth: true,
+    },
+    },
+    {path: "/all-courses", 
+    component: ()=> import ("../views/AllCourses.vue"),
+    meta:{
+     requiresAuth: true,
+    },
+    },
+    {path: "/user-page", 
+    component: ()=> import ("../views/UserPage.vue"),
+    meta:{
+     requiresAuth: true,
+    },
+    },
     { 
       path: "/feed", 
       component: ()=> import ("../views/Feed.vue"),

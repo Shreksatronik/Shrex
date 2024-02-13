@@ -2,13 +2,20 @@
   <div class="home">
   <main class="px-3">
     <div>
+      <button class="UserButton2" @click="OnUserPage" style="border: 0; background: transparent">
+ <img src="https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png" width="115" height="70" alt="userpage" />
+</button>
     <h1 class = "Title">SHmoodle</h1>
     <h3 class = "Title2">Интеллектуальная образовательная среда</h3>
     </div>
     <div class = "buttons">
       <button class="buttonZareg" @click="OnRegisterPage" v-if ="!isLoggedInn" > Зарегистрироваться </button>
       <button  class="voitiButton" @click="OnSignInPage"  v-if ="!isLoggedInn" >Войти</button>
-      <button @click="handleSignOut" v-if = "isLoggedInn">Sign Out</button>
+      <router-link class="onMainPageFeed" to="/" v-if = "isLoggedInn" >На главную</router-link>
+      <router-link class="AllCourses" to="/all-courses"  v-if = "isLoggedInn">Все курсы</router-link>
+      <router-link class="AddedCourses" to="/my-courses"  v-if = "isLoggedInn">Созданные курсы</router-link>
+      <router-link class="AddCourse" to="/add-courses"  v-if = "isLoggedInn">Создать курс</router-link>
+
     </div>
   
     
@@ -16,7 +23,10 @@
   </div>
 
 <div class="home2">
-  <img src="image">
+  <div>
+    <img src="images/Young female chatting online 1.png" alt="young female">
+  </div>
+ 
   <h1 class="text1">О нашей компании
   коротко представьтесь и расскажите
  о компании или сервисе
@@ -60,7 +70,10 @@ const router = useRouter();
   const OnSignInPage = ()=>{
     router.push("/sign-in");
 };
-import image from ".//img/4.jpg"
+const OnUserPage = ()=>{
+    router.push("/user-page");
+  };
+
 let auth;
 onMounted(() => {
   auth = getAuth();
@@ -72,16 +85,46 @@ onMounted(() => {
       }
   });
 });
-const handleSignOut = ()=>{
-  signOut(auth).then(()=>{
-    router.push("/");
-  });
-};
+
 
 </script>
 
 
 <style>
+.UserButton2{
+  position: absolute;
+  top:0%;  
+  right:0%; 
+   
+}
+.onMainPageFeed{
+  position: absolute;
+  color:white;
+  font-size: 19px;
+  top:1%;
+  left:1%;
+}
+.AllCourses{
+  position: absolute;
+  color:white;
+  font-size: 19px;
+  top:1%;
+  left:7%;
+}
+.AddedCourses{
+  position: absolute;
+  color:white;
+  font-size: 19px;
+  top:1%;
+  left:12.3%;
+}
+.AddCourse{
+  position: absolute;
+  color:white;
+  font-size: 19px;
+  top:1%;
+  left: 21%;
+}
 .text1{
   font-size: 200%;
   text-align: center;
